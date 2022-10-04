@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "341e66f9-d1f3-4813-84db-2ec41cdba28f",
+		"name": "ConvergenceTestes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4566777"
+	},
+	"item": [
+		{
+			"name": "ExemploSalvarPessoaCpf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cpf\": \"123456\",\r\n  \"data\": \"1982/03/05\",\r\n  \"name\": \"Teste\",\r\n  \"status\": \"ATIVADO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cpf/pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cpf",
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todas as pessoas/cpf cadastrados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/cpf/pessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cpf",
+						"pessoa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar status cpf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cpf\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/cpf/pessoa/consultarStatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"cpf",
+						"pessoa",
+						"consultarStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar um login validando cpf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cpf\": \"123456\",\r\n  \"dataCadastro\": \"2022/10/04\",\r\n  \"senha\": \"987654\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/login/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"login",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
