@@ -38,7 +38,7 @@ public abstract class BaseResource<E extends BasicEntity<E>, S extends BaseServi
 			response.setHeader(HttpHeaders.LOCATION, uri.toString());
 			return entidadeCadastrado;
 		} catch (ConsistenciaEntidadeException e) {
-			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
 		}
 	}
 
@@ -48,7 +48,7 @@ public abstract class BaseResource<E extends BasicEntity<E>, S extends BaseServi
 		try {
 			return service.change(entidade, id);
 		} catch (ConsistenciaEntidadeException e) {
-			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
 		}
 	}
 

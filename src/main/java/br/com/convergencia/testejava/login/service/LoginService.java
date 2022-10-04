@@ -1,7 +1,6 @@
 package br.com.convergencia.testejava.login.service;
 
 import java.util.Base64;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

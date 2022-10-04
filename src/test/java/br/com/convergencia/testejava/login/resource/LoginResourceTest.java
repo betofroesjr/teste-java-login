@@ -87,7 +87,11 @@ class LoginResourceTest {
 		Mockito.when(service.insert(entidade)).thenReturn(resultMock);
 
 		mockMvc.perform(MockMvcRequestBuilders.post("/login").contentType(MediaType.APPLICATION_JSON_VALUE)
-				.content(objectMapper.writeValueAsBytes(entidade)))
+				.content("{"
+						+ "  \"cpf\": \"123456\","
+						+ "  \"dataCadastro\": \"2022/10/04\","
+						+ "  \"senha\": \"987654\""
+						+ "}"))
 				.andExpect(MockMvcResultMatchers.status().isCreated());
 	}
 
@@ -95,7 +99,7 @@ class LoginResourceTest {
 		Login login = new Login();
 		login.setSenha("123456");
 		login.setCpf("987654");
-		login.setDataCadastro(LocalDate.now());
+		login.setDataCadastro(LocalDate.of(2022, 10, 4));
 		return login;
 	}
 
