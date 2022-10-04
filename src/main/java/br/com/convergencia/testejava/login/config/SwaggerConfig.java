@@ -21,13 +21,13 @@ public class SwaggerConfig {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.apiInfo(apiInfo())
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("br.com.convergencia.testejava.cpf.resource"))
+				.apis(RequestHandlerSelectors.basePackage("br.com.convergencia.testejava.login.resource"))
 				.paths(PathSelectors.any())
 				.build();
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("Controle de Cpf API").description("CRUD API para controle de CPF's")
+		return new ApiInfoBuilder().title("Controle de Login API").description("CRUD API para controle de Login's")
 				.termsOfServiceUrl("https://github.com/betofroesjr/")
 				.contact(new Contact("José Humberto", "https://github.com/betofroesjr/", "betofroesjr@gmail.com"))
 				.license("Convergencia License").licenseUrl("https://github.com/betofroesjr/").version("1.0.0").build();
